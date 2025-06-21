@@ -4,6 +4,8 @@ import json
 import re
 from mistralai import Mistral
 from app.config import MISTRAL_API_KEY
+from app.db.mongo_client import invoices_collection
+from bson import ObjectId
 
 model = "pixtral-12b-2409"
 client = Mistral(api_key=MISTRAL_API_KEY)
@@ -26,7 +28,7 @@ def send_image_to_mistral(base64_image: str):
                 {
                     "type": "text",
                     "text": (
-                        "Please extract the invoice data (From Product : NameProduct, CategoryName, Stock) "
+                        "Please extract the invoice data (From Product : NameProduct and Stock(Cant.) only) "
                         "and return only the JSON wrapped in ```json ... ```"
                     )
                 },
@@ -54,5 +56,19 @@ def send_image_to_mistral(base64_image: str):
 
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(parsed_json, f, indent=4, ensure_ascii=False)
+
+    def fix_objectid(obj):
+        if isinstance(obj, list):
+            return [fix_objectid(o) for o in obj]
+        if isinstance(obj, dict):
+            return {k: fix_objectid(v) for k, v in obj.items()}
+        if isinstance(obj, ObjectId):
+            return str(obj)
+        return obj
+
+    result = invoices_collection.insert_one(parsed_json)
+    saved_doc = invoices_collection.find_one({"_id": result.inserted_id})
+    clean_doc = fix_objectid(saved_doc)
+    return clean_doc
 
     return parsed_json
