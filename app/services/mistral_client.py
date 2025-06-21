@@ -4,11 +4,19 @@ import json
 import re
 from mistralai import Mistral
 from app.config import MISTRAL_API_KEY
-from app.services.transform_parsed_json import transform_all_saved_invoices
-
 
 model = "pixtral-12b-2409"
 client = Mistral(api_key=MISTRAL_API_KEY)
+
+
+def extract_clean_json(raw_text_block):
+    # Extrage JSON curat din blocul ```json ... ```
+    match = re.search(r"```json\s*(\{.*?\})\s*```", raw_text_block, re.DOTALL)
+    if not match:
+        raise ValueError("JSON block not found in the response.")
+    json_text = match.group(1)
+    return json.loads(json_text)
+
 
 def send_image_to_mistral(base64_image: str):
     messages = [
@@ -18,7 +26,7 @@ def send_image_to_mistral(base64_image: str):
                 {
                     "type": "text",
                     "text": (
-                        "Please extract the invoice data (company, client, date, products) "
+                        "Please extract the invoice data (From Product : NameProduct, CategoryName, Stock) "
                         "and return only the JSON wrapped in ```json ... ```"
                     )
                 },
@@ -33,28 +41,18 @@ def send_image_to_mistral(base64_image: str):
     response = client.chat.complete(model=model, messages=messages)
     result_text = response.choices[0].message.content
 
-    # Extrage JSON-ul din blocul ```json ... ```
-    match = re.search(r"```json\s*(\{.*?\})\s*```", result_text, re.DOTALL)
-    if not match:
-        raise ValueError("JSON block not found in the response.")
-
-    json_text = match.group(1)
-
+    # În rezultat avem JSON cu "raw_text" (string ce conține blocul ```json ... ```)
+    # Prima dată îl parsam ca JSON simplu
     try:
-        parsed_json = json.loads(json_text)
-    except json.JSONDecodeError as e:
-        raise ValueError(f"Invalid JSON format inside code block: {e}")
+        parsed_json = extract_clean_json(result_text)
+    except Exception as e:
+        raise ValueError(f"Failed to extract JSON: {e}")
 
-    # Creează folderul dacă nu există
     os.makedirs("saved_invoices", exist_ok=True)
-
-    # Creează numele fișierului cu data și ora
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = f"saved_invoices/invoice_{timestamp}.json"
 
-    # Salvează JSON-ul curat (fără raw_text)
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(parsed_json, f, indent=4, ensure_ascii=False)
 
     return parsed_json
-

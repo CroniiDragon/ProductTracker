@@ -1,3 +1,0 @@
-{
-    "raw_text": "```json\n{\n  \"invoices\": [\n    {\n      \"productName\": \"BATERIE STATIVA BUCATARIE S\",\n      \"category\": \"1\",\n      \"stock\": \"140\"\n    },\n    {\n      \"productName\": \"SACOSA METRO PLASTIC\",\n      \"category\": \"1\",\n      \"stock\": \"80\"\n    },\n    {\n      \"productName\": \"125 SCRUBINE AROD IN SOS TUM\",\n      \"category\": \"1\",\n      \"stock\": \"10\"\n    },\n    {\n      \"productName\": \"CAFE HOME ESSENSED AL\",\n      \"category\": \"1\",\n      \"stock\": \"80\"\n    },\n    {\n      \"productName\": \"BOX CLIPSEAL JEDO TRIPLE\",\n      \"category\": \"1\",\n      \"stock\": \"1\"\n    }\n  ]\n}\n```"
-}
