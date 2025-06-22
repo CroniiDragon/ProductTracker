@@ -1,0 +1,24 @@
+{
+    "invoice": [
+        {
+            "Product": "BATERIE STATIVA BUCATARIE S",
+            "Stock": "1"
+        },
+        {
+            "Product": "SACOSA METRO PLASTIC",
+            "Stock": "1"
+        },
+        {
+            "Product": "CASCA SINEA ARC IN SOS TUM",
+            "Stock": "1"
+        },
+        {
+            "Product": "CAFE HOME ESSENSO AL",
+            "Stock": "1"
+        },
+        {
+            "Product": "SOAP CLIPPER JEDO TRIPLE",
+            "Stock": "1"
+        }
+    ]
+}

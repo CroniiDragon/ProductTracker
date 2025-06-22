@@ -1,0 +1,24 @@
+{
+    "invoice": [
+        {
+            "Product": "BATERIE STATIVA BUCATARIE S",
+            "Stock": 140
+        },
+        {
+            "Product": "SACOSA METRO PLASTIC",
+            "Stock": 80
+        },
+        {
+            "Product": "25G SABUNE ARG IN SOS TUM",
+            "Stock": 10
+        },
+        {
+            "Product": "CAFE HOME ESSENSED AL",
+            "Stock": 80
+        },
+        {
+            "Product": "MOOG CLIPFIX JEDO TALPAIE",
+            "Stock": 1
+        }
+    ]
+}

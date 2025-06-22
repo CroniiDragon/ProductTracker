@@ -1,0 +1,64 @@
+{
+    "items": [
+        {
+            "name": "TRAVEL",
+            "stock": "41,096.00"
+        },
+        {
+            "name": "CONTRACTS",
+            "stock": "283,51.92"
+        },
+        {
+            "name": "ST OF IDAHO EQUIP",
+            "stock": "18,600.00"
+        },
+        {
+            "name": "ST OF MONTANA EQUIP",
+            "stock": "19,295.00"
+        },
+        {
+            "name": "WSEO ED294893",
+            "stock": "6,379.70"
+        },
+        {
+            "name": "WSEO ED295042",
+            "stock": "8,000.00"
+        },
+        {
+            "name": "WSEO ED294893 TQ/TP",
+            "stock": "39,347.00"
+        },
+        {
+            "name": "WSEO ED294891",
+            "stock": "1,485.00"
+        },
+        {
+            "name": "WSEO ED294894",
+            "stock": "1,55.00"
+        },
+        {
+            "name": "WSEO ED294841",
+            "stock": "7,649.90"
+        },
+        {
+            "name": "WSEO ED295352",
+            "stock": "1,218.68"
+        },
+        {
+            "name": "WSEO ED295383",
+            "stock": "1,288.67"
+        },
+        {
+            "name": "WSEO ED295105",
+            "stock": "1,286.42"
+        },
+        {
+            "name": "WSEO ED294896",
+            "stock": "1,228.41"
+        },
+        {
+            "name": "WSEO ED294406",
+            "stock": "1,266.41"
+        }
+    ]
+}

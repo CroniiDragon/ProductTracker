@@ -1,0 +1,16 @@
+{
+    "invoice_data": [
+        {
+            "NameProduct": "Apa mineralo slab",
+            "Stock": 5
+        },
+        {
+            "NameProduct": "Biscuiti sau noculata",
+            "Stock": 10
+        },
+        {
+            "NameProduct": "Icre rosie de somon",
+            "Stock": 7
+        }
+    ]
+}

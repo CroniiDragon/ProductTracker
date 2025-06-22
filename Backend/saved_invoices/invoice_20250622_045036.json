@@ -1,0 +1,24 @@
+{
+    "invoice": [
+        {
+            "NameProduct": "BATERIE STATIVA BUCATARIE S",
+            "Stock": "1"
+        },
+        {
+            "NameProduct": "SACOSA METRO PLASTIC",
+            "Stock": "1"
+        },
+        {
+            "NameProduct": "2X50 SABLONE ARG IN SOS TUN",
+            "Stock": "5"
+        },
+        {
+            "NameProduct": "CAFE HOME ESSENSED AL",
+            "Stock": "1"
+        },
+        {
+            "NameProduct": "BOX CLIPFIX JEDO TRIATLE",
+            "Stock": "1"
+        }
+    ]
+}

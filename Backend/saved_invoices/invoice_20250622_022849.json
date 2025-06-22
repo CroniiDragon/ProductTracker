@@ -1,0 +1,24 @@
+{
+    "invoice": [
+        {
+            "NameProduct": "BATERIE STATIVA BUCATARIE S",
+            "Stock": "1"
+        },
+        {
+            "NameProduct": "SACOSA METRO PLASTIC",
+            "Stock": "1"
+        },
+        {
+            "NameProduct": "125 SCRUBINE ARG IN SOS TUM",
+            "Stock": "5"
+        },
+        {
+            "NameProduct": "CAFE HOME ESSENSO AL",
+            "Stock": "1"
+        },
+        {
+            "NameProduct": "SOCOGEL CLARIFIC JEUD TARIE",
+            "Stock": "1"
+        }
+    ]
+}

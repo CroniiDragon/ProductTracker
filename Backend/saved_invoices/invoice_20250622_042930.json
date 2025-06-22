@@ -1,0 +1,20 @@
+{
+    "invoice_data": [
+        {
+            "NameProduct": "Apol minerala slab",
+            "Stock": 5
+        },
+        {
+            "NameProduct": "Scrub oli corp cu nuc",
+            "Stock": 10
+        },
+        {
+            "NameProduct": "Biscuiti din ciocolata",
+            "Stock": 7
+        },
+        {
+            "NameProduct": "Jose cuisir de somon",
+            "Stock": 4
+        }
+    ]
+}
