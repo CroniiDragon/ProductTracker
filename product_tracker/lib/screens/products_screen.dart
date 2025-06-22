@@ -268,29 +268,14 @@ class ProductsScreenState extends State<ProductsScreen> {
                   'price': '${priceController.text.trim()} MDL',
                 };
 
+                // Închide dialogul ÎNAINTE de a apela API-ul
                 Navigator.of(context).pop();
-
-                // Afișează loading
-                showDialog(
-                  context: context,
-                  barrierDismissible: false,
-                  builder: (context) => const AlertDialog(
-                    content: Row(
-                      children: [
-                        CircularProgressIndicator(),
-                        SizedBox(width: 16),
-                        Text('Se actualizează produsul...'),
-                      ],
-                    ),
-                  ),
-                );
 
                 try {
                   // Apelează API pentru actualizare
                   await ApiService.updateProduct(product['id']?.toString() ?? '', updatedProduct);
                   
-                  if (!context.mounted) return;
-                  Navigator.of(context).pop(); // Închide loading
+                  if (!mounted) return;
                   
                   // Actualizează lista locală
                   setState(() {
@@ -308,8 +293,7 @@ class ProductsScreenState extends State<ProductsScreen> {
                     ),
                   );
                 } catch (e) {
-                  if (!context.mounted) return;
-                  Navigator.of(context).pop(); // Închide loading
+                  if (!mounted) return;
                   
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
