@@ -74,7 +74,7 @@ class ScanReceiptScreenState extends State<ScanReceiptScreen> {
       if (!mounted) return;
       
       // Navighează la ecranul de rezultate cu datele reale
-      Navigator.push(
+      final success = await Navigator.push<bool>(
         context,
         MaterialPageRoute(
           builder: (context) => ProcessingResultScreen(
@@ -83,6 +83,11 @@ class ScanReceiptScreenState extends State<ScanReceiptScreen> {
           ),
         ),
       );
+      
+      // Dacă produsele au fost salvate cu succes, întoarce-te cu rezultat pozitiv
+      if (success == true && mounted) {
+        Navigator.of(context).pop(true);
+      }
       
     } catch (e) {
       setState(() {

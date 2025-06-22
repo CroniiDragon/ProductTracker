@@ -534,8 +534,8 @@ class ProcessingResultScreenState extends State<ProcessingResultScreen> {
         ),
       );
       
-      // Navighează înapoi la ecranul principal
-      Navigator.of(context).popUntil((route) => route.isFirst);
+      // Navighează înapoi cu rezultat de succes
+      Navigator.of(context).pop(true); // Returnează true pentru a indica succes
       
     } catch (e) {
       if (!context.mounted) return;

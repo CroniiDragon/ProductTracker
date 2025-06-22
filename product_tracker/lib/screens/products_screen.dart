@@ -4,7 +4,9 @@ import '../widgets/stat_card.dart';
 import 'scan_receipt_screen.dart';
 
 class ProductsScreen extends StatefulWidget {
-  const ProductsScreen({super.key});
+  final String? initialFilter;
+  
+  const ProductsScreen({super.key, this.initialFilter});
 
   @override
   ProductsScreenState createState() => ProductsScreenState();
@@ -16,9 +18,20 @@ class ProductsScreenState extends State<ProductsScreen> {
   bool _isLoading = false;
   Map<String, int>? _stats;
 
+  // Mapare pentru filtrele din home screen către filtrele UI
+  final Map<String, String> _filterMapping = {
+    'expired': 'Expirate',
+    'expiring_soon': 'Aproape expirate',
+    'fresh': 'Valabile',
+  };
+
   @override
   void initState() {
     super.initState();
+    // Setează filtrul inițial dacă este specificat
+    if (widget.initialFilter != null && _filterMapping.containsKey(widget.initialFilter)) {
+      _selectedFilter = _filterMapping[widget.initialFilter]!;
+    }
     _loadProducts();
   }
 

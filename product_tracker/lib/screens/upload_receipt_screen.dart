@@ -51,7 +51,7 @@ class UploadReceiptScreenState extends State<UploadReceiptScreen> {
       if (!mounted) return;
 
       // Navighează la ecranul de rezultate
-      Navigator.push(
+      final success = await Navigator.push<bool>(
         context,
         MaterialPageRoute(
           builder: (context) => ProcessingResultScreen(
@@ -60,6 +60,11 @@ class UploadReceiptScreenState extends State<UploadReceiptScreen> {
           ),
         ),
       );
+      
+      // Dacă produsele au fost salvate cu succes, întoarce-te cu rezultat pozitiv
+      if (success == true && mounted) {
+        Navigator.of(context).pop(true);
+      }
       
     } catch (e) {
       setState(() {

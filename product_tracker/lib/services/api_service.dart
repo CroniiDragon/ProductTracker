@@ -41,11 +41,16 @@ class ApiService {
     }
   }
 
-  /// Obține toate produsele salvate (dacă implementezi endpoint-ul)
-  static Future<List<Map<String, dynamic>>> getProducts() async {
+  /// Obține toate produsele salvate
+  static Future<List<Map<String, dynamic>>> getProducts({String? filter}) async {
     try {
+      String url = '$baseUrl/api/products';
+      if (filter != null) {
+        url += '?filter_type=$filter';
+      }
+      
       final response = await http.get(
-        Uri.parse('$baseUrl/api/products'),
+        Uri.parse(url),
         headers: {'Content-Type': 'application/json'},
       );
 
@@ -63,7 +68,34 @@ class ApiService {
     }
   }
 
-  /// Salvează un produs (dacă implementezi endpoint-ul)
+  /// Obține statistici despre produse
+  static Future<Map<String, int>> getProductsStats() async {
+    try {
+      final response = await http.get(
+        Uri.parse('$baseUrl/api/products/stats'),
+        headers: {'Content-Type': 'application/json'},
+      );
+
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        return {
+          'total': data['total'] ?? 0,
+          'expired': data['expired'] ?? 0,
+          'expiring_soon': data['expiring_soon'] ?? 0,
+          'fresh': data['fresh'] ?? 0,
+        };
+      } else {
+        throw ApiException(
+          'Eroare la obținerea statisticilor: ${response.statusCode}',
+          response.statusCode,
+        );
+      }
+    } catch (e) {
+      throw ApiException('Eroare de rețea: $e', 0);
+    }
+  }
+
+  /// Salvează un produs
   static Future<Map<String, dynamic>> saveProduct(Map<String, dynamic> product) async {
     try {
       final response = await http.post(
