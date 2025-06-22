@@ -12,8 +12,6 @@ Multe afaceri locale nu au acces la tehnologii avansate pentru monitorizarea pro
 
 ---
 
-https://kzml8ubbg2kzuv496quv.lite.vusercontent.net/#technology
-
 ## ✨ Funcționalități Cheie
 
 - 📸 **Scanare factură cu camera** – Detectare automată produse prin AI  
