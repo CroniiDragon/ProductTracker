@@ -1,16 +1,18 @@
-# 🧾 SmartBillAI
-
+# 🧾 ProductTracker
 🎯 **Descrierea Proiectului**  
-SmartBillAI este o aplicație mobilă inovatoare dezvoltată special pentru micile afaceri din Moldova, care rezolvă problema adopției lente a tehnologiilor AI prin oferirea unei soluții accesibile și relevante pentru gestionarea inventarului.
+ProductTracker este o aplicație mobilă inovatoare dezvoltată special pentru micile afaceri din Moldova, care rezolvă problema adopției lente a tehnologiilor AI prin oferirea unei soluții accesibile și relevante pentru gestionarea inventarului.
 
----
+🌐 [Landing page oficial](https://kzml8ubbg2kzuv496quv.lite.vusercontent.net/#technology)
+
 
 ## 🚀 Problema Rezolvată
 
 Multe afaceri locale nu au acces la tehnologii avansate pentru monitorizarea produselor și prevenirea risipei.  
-**SmartBillAI democratizează accesul la AI** prin simpla scanare a facturilor fiscale.
+**ProductTracker democratizează accesul la AI** prin simpla scanare a facturilor fiscale.
 
 ---
+
+https://kzml8ubbg2kzuv496quv.lite.vusercontent.net/#technology
 
 ## ✨ Funcționalități Cheie
 
@@ -51,7 +53,7 @@ Multe afaceri locale nu au acces la tehnologii avansate pentru monitorizarea pro
 
 ### 1. Scanarea unei Facturi
 
-1. Deschide aplicația SmartBillAI  
+1. Deschide aplicația ProductTracker  
 2. Apasă pe "Scanează Factură"  
 3. Fotografiază factura sau selectează din galerie  
 4. Așteaptă procesarea AI (2-5 secunde)  
@@ -111,5 +113,5 @@ Multe afaceri locale nu au acces la tehnologii avansate pentru monitorizarea pro
 ### 1. Clonare Repository
 
 ```bash
-git clone https://github.com/username/smartbillai.git
-cd smartbillai
+git clone https://github.com/username/ProductTracker.git
+cd ProductTracker
